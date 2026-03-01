@@ -1,0 +1,125 @@
+:root {
+    --bg: #0f172a;
+    --card: #020617;
+    --accent: #22c55e;
+    --muted: #94a3b8;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: white;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Left panel */
+.list {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    padding: 16px;
+    overflow: hidden;
+}
+
+.li {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.content {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Queue items */
+.item {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(255,255,255,0.06);
+    transition: 0.15s ease;
+    font-size: 16px;
+}
+
+.item:hover {
+    background: rgba(34,197,94,0.25);
+}
+
+.item.active {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #052e16;
+    font-weight: 700;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgba(34,197,94,0.6);
+}
+
+/* Main display area */
+.main {
+    display: grid;
+    place-items: center;
+}
+
+/* Card */
+.card {
+    background: rgba(2,6,23,0.75);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: clamp(24px, 4vw, 48px);
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 4vw, 40px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+/* Big number */
+#displayID {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    letter-spacing: 4px;
+    cursor: pointer;
+    user-select: none;
+    text-shadow: 0 0 30px rgba(34,197,94,0.6);
+    color: var(--accent);
+
+    /* Responsive size */
+    font-size: clamp(64px, 14vw, 180px);
+}
+
+/* Buttons */
+.prev, .next {
+    width: clamp(48px, 6vw, 72px);
+    height: clamp(48px, 6vw, 72px);
+    border-radius: 999px;
+    border: none;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    transition: 0.15s ease;
+}
+
+.prev:hover, .next:hover {
+    background: var(--accent);
+    color: #052e16;
+}
+
+/* Label */
+.label {
+    text-align: center;
+    font-size: clamp(14px, 2vw, 22px);
+    letter-spacing: 4px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.monitorpath:hover{
+    cursor: pointer;
+}
